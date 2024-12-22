@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container-fluid">
+  <div class="d-flex" style="overflow-x: auto; overflow-y: hidden; white-space: nowrap; padding-bottom: 20px;">
+    {% for product in products %}
+    <div class="card" style="width: 18rem; display: inline-block; margin-right: 1rem; height: 400px; flex-shrink: 0;">
+      <img src="{{ product.photo.url }}" class="card-img-top" alt="..." style="height: 200px; object-fit: cover;">
+      <div class="card-body" style="overflow: hidden; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+        <h5 class="card-title" style="height: 50px; overflow: hidden; text-overflow: ellipsis;">{{ product.name }}</h5>
+        <p class="card-text" style="height: 70px; overflow: hidden; text-overflow: ellipsis;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary" style="margin-top: auto;">Go somewhere</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
